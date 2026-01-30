@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تواصل مع د. عبدالرحمن حسن">
+    <title>تواصل معي | د. عبدالرحمن حسن</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .page-header {
+            background: var(--gradient-hero);
+            padding: calc(80px + var(--spacing-3xl)) 0 var(--spacing-3xl);
+            text-align: center;
+            color: var(--text-on-dark);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .page-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-section {
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--spacing-3xl);
+        }
+
+        .contact-info {
+            background: var(--bg-secondary);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: var(--spacing-xl);
+            font-size: 1.4rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            color: var(--primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .contact-text p,
+        .contact-text a {
+            color: var(--text-secondary);
+        }
+
+        .contact-text a:hover {
+            color: var(--secondary);
+        }
+
+        .contact-form {
+            background: var(--bg-primary);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: var(--spacing-xl);
+            font-size: 1.4rem;
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: var(--spacing-md);
+            border: 2px solid var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition-base);
+            background: var(--bg-primary);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: var(--spacing-md) var(--spacing-xl);
+        }
+
+        .social-section {
+            margin-top: var(--spacing-2xl);
+            padding-top: var(--spacing-xl);
+            border-top: 1px solid var(--bg-tertiary);
+        }
+
+        .social-section h4 {
+            color: var(--primary);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .faq-section {
+            padding: var(--spacing-3xl) 0;
+            background: var(--bg-secondary);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .faq-item {
+            background: var(--bg-primary);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-item h4 {
+            color: var(--primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span class="logo-text">د. عبدالرحمن حسن</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                <li><a href="books.html" class="nav-link">الكتب</a></li>
+                <li><a href="series.html" class="nav-link">السلاسل</a></li>
+                <li><a href="about.html" class="nav-link">عن المؤلف</a></li>
+                <li><a href="contact.html" class="nav-link active">تواصل معي</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="القائمة">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>✉️ تواصل معي</h1>
+            <p>يسعدني سماع آرائكم واستفساراتكم</p>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>معلومات التواصل</h3>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-text">
+                            <h4>البريد الإلكتروني</h4>
+                            <a href="mailto:author@example.com">author@example.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <h4>الموقع</h4>
+                            <p>القاهرة، مصر</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-text">
+                            <h4>وقت الرد</h4>
+                            <p>عادة خلال 24-48 ساعة</p>
+                        </div>
+                    </div>
+
+                    <div class="social-section">
+                        <h4>تابعني على</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link" style="background: var(--primary);">𝕏</a>
+                            <a href="#" class="social-link" style="background: var(--primary);">in</a>
+                            <a href="#" class="social-link" style="background: var(--primary);">f</a>
+                            <a href="#" class="social-link" style="background: var(--primary);">▶</a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" onsubmit="handleContactForm(event)">
+                    <h3>أرسل رسالة</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل *</label>
+                            <input type="text" id="name" name="name" required placeholder="أدخل اسمك">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني *</label>
+                            <input type="email" id="email" name="email" required placeholder="example@email.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">الموضوع *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">اختر الموضوع</option>
+                            <option value="inquiry">استفسار عام</option>
+                            <option value="book">سؤال عن كتاب</option>
+                            <option value="collaboration">تعاون أو شراكة</option>
+                            <option value="feedback">ملاحظات واقتراحات</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">الرسالة *</label>
+                        <textarea id="message" name="message" required placeholder="اكتب رسالتك هنا..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary submit-btn">
+                        إرسال الرسالة ←
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">أسئلة متكررة</h2>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>كيف يمكنني الحصول على نسخة من كتاب؟</h4>
+                    <p>تتوفر الكتب في المكتبات الكبرى ومنصات البيع الإلكترونية، كما يمكن طلبها مباشرة من دور النشر.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>هل تتوفر نسخ إلكترونية؟</h4>
+                    <p>نعم، معظم الكتب متوفرة بصيغة PDF وePub على المنصات الإلكترونية المختلفة.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>هل يمكنني دعوتك لمحاضرة؟</h4>
+                    <p>نعم، يمكنك التواصل معي عبر النموذج أعلاه لمناقشة تفاصيل الدعوة.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>كيف أبقى على اطلاع بالإصدارات الجديدة؟</h4>
+                    <p>يمكنك الاشتراك في القائمة البريدية أو متابعتي على وسائل التواصل الاجتماعي.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة © 2026 | د. عبدالرحمن حسن</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" aria-label="العودة للأعلى">↑</button>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

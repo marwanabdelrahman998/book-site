@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سلاسل كتب د. عبدالرحمن حسن - إدارة الأعمال وذكاء الأعمال">
+    <title>السلاسل | د. عبدالرحمن حسن</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .page-header {
+            background: var(--gradient-hero);
+            padding: calc(80px + var(--spacing-3xl)) 0 var(--spacing-3xl);
+            text-align: center;
+            color: var(--text-on-dark);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .page-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .series-detail {
+            padding: var(--spacing-3xl) 0;
+            border-bottom: 1px solid var(--bg-tertiary);
+        }
+
+        .series-detail:nth-child(even) {
+            background: var(--bg-secondary);
+        }
+
+        .series-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .series-header-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .series-header-text h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .series-header-text p {
+            color: var(--text-secondary);
+        }
+
+        .series-stats {
+            display: flex;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .series-stat {
+            background: var(--bg-primary);
+            padding: var(--spacing-lg) var(--spacing-xl);
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .series-stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .series-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span class="logo-text">د. عبدالرحمن حسن</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                <li><a href="books.html" class="nav-link">الكتب</a></li>
+                <li><a href="series.html" class="nav-link active">السلاسل</a></li>
+                <li><a href="about.html" class="nav-link">عن المؤلف</a></li>
+                <li><a href="contact.html" class="nav-link">تواصل معي</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="القائمة">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>📖 سلاسل الكتب</h1>
+            <p>مجموعات متخصصة من الكتب تغطي مختلف المستويات والتخصصات</p>
+        </div>
+    </header>
+
+    <!-- Series Sections -->
+    <div id="seriesContainer"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة © 2026 | د. عبدالرحمن حسن</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" aria-label="العودة للأعلى">↑</button>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.getElementById('seriesContainer');
+
+            series.forEach(s => {
+                const seriesBooks = books.filter(b => b.seriesId === s.id);
+
+                container.innerHTML += `
+                    <section class="series-detail" id="series-${s.id}">
+                        <div class="container">
+                            <div class="series-header">
+                                <div class="series-header-icon">${s.icon}</div>
+                                <div class="series-header-text">
+                                    <h2>${s.name}</h2>
+                                    <p>${s.description}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="series-stats">
+                                <div class="series-stat">
+                                    <div class="series-stat-value">${s.bookCount}</div>
+                                    <div class="series-stat-label">كتاب</div>
+                                </div>
+                                <div class="series-stat">
+                                    <div class="series-stat-value">${seriesBooks.reduce((a, b) => a + b.pages, 0)}</div>
+                                    <div class="series-stat-label">صفحة</div>
+                                </div>
+                            </div>
+                            
+                            <div class="books-grid">
+                                ${seriesBooks.map(book => `
+                                    <div class="book-card">
+                                        <div class="book-cover">
+                                            <img src="${book.cover}" alt="${book.title}"
+                                                 onerror="this.src='https://via.placeholder.com/220x300/1e3a5f/d4af37?text=${encodeURIComponent(book.title)}'">
+                                            ${book.isNew ? '<span class="book-badge">جديد</span>' : ''}
+                                        </div>
+                                        <div class="book-info">
+                                            <span class="book-series">${book.series}</span>
+                                            <h3 class="book-title">${book.title}</h3>
+                                            <div class="book-meta">
+                                                <span>📅 ${book.year}</span>
+                                                <span>📄 ${book.pages} صفحة</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </section>
+                `;
+            });
+        });
+    </script>
+</body>
+
+</html>
